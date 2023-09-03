@@ -1,0 +1,20 @@
+% setdefault("napaka","")
+%rebase("base.html",naslov="Dodaja novega administratorja",uporabnik=1,napaka=napaka)
+
+<div class="container w-50"> 
+    <form action="{{url('dodaj_administratorja')}}" method="post">
+
+        <div class="text-center mt-3">
+            <label for="oseba">Uporabnik:</label>
+            <select class="form-select" name="oseba" id="oseba">    
+            %for x in seznam_oseb:        
+                <option value="{{x[0]}}" {{'selected' if x[0]== oseba else '' }}>{{x[0]}}</option>
+            %end
+            </select>
+        </div>
+
+        <div class="text-center mt-3">
+            <input class="form-select mb-5 mt-3 btn btn-danger" value = "Dodaj" type="submit" />
+        </div>
+    </form>
+</div>

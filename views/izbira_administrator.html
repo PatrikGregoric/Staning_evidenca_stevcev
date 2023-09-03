@@ -1,0 +1,28 @@
+% setdefault("napaka","")
+% rebase("base.html",naslov="",uporabnik=1,napaka="")
+
+<div class="container w-50">
+    <form action="{{url('domov')}}" method="get">
+        <div class="text-center mt-4 mb-5">
+        <input class="form-control btn btn-danger" value = "Pregled enot" type="submit" />
+        </div>
+    </form>
+    <form action="{{url('dodaj_stavbo')}}" method="get">
+        <div class="text-center mt-3">
+        <input class="form-control btn btn-danger" value = "Dodaj stavbo" type="submit" />
+        </div>
+    </form>
+
+    <form action="{{url('dodaj_stevec')}}" method="get">
+        <div class="text-center mt-3">
+        <input class="form-control btn btn-danger" value = "Dodaj števec" type="submit" />
+        </div>
+    </form>
+
+    <form action="{{url('dodaj_administratorja')}}" method="get">
+        <div class="text-center mt-3">
+        <input class="form-control btn btn-danger" value = "Dodaj administratorja" type="submit" />
+        </div>
+    </form>
+
+<div>

@@ -1,0 +1,16 @@
+% setdefault("napaka","")
+%rebase("base.html",naslov="Izberite",napaka="")
+
+<div class="container w-50">    
+    <form action="{{url('dodaj')}}" method="get">
+        <div class="text-center mt-5">
+        <input class="form-control btn btn-danger" value = "Prijavi enoto" type="submit" />
+        </div>
+    </form>
+
+    <form action="{{url('domov')}}" method="get">
+        <div class="text-center mt-4 mb-5">
+        <input class="form-control btn btn-danger" value = "Pregled enot" type="submit" />
+        </div>
+    </form>
+</div>

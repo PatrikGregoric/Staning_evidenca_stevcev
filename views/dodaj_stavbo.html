@@ -1,0 +1,12 @@
+% setdefault("napaka","")
+%rebase("base.html",naslov="Dodaj novo stavbo",uporabnik=1,napaka=napaka)
+
+<div class="container w-50">   
+<form action="{{url('dodaj_stavbo')}}" method="post">
+    <div class="text-center mt-3">
+        <label for="dodana_stavba">Stavba:</label>
+        <input class="form-control" id="dodana_stavba" name="dodana_stavba" value="{{dodana_stavba}}" type="text"/>
+    </div>
+    <input class="form-control mb-5 mt-3 btn btn-danger" value = "Dodaj stavbo" type="submit" />
+</form>
+</div>

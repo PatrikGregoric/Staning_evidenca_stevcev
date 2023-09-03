@@ -1,0 +1,49 @@
+%setdefault("napaka","")
+%rebase("base.html",naslov="Dodaj enoto",uporabnik=uporabnik,napaka=napaka)
+
+<div class="container w-50">    
+    <form action="{{url('dodaj')}}" method="post">
+        <div class="text-center mt-5">
+            <label for="stevec">Izberite števec:</label>
+            <select class="form-select" name="stevec" id="stevec">    
+                %for x in stevecid:
+                    %if x[1]=="Skoda":
+                        <option value="Skoda">Škoda</option>
+                    %else:          
+                        <option value="{{x[1]}}" {{'selected' if x[1]== stevec else '' }}>{{x[1]}}</option>
+                    %end
+                %end
+            </select>
+        </div>
+
+        <div class="text-center mt-5">
+            <label for="stavba">Izberite stavbo:</label>
+            <select class="form-select" name="stavba" id="stavba">    
+                %for x in stavbaid:
+                    %if x[1]=="Skoda":
+                        <option value="Skoda">Škoda</option>
+                    %else:          
+                        <option value="{{x[1]}}" {{'selected' if x[1]== stavba else '' }}>{{x[1]}}</option>
+                    %end
+                %end
+            </select>
+        </div>
+
+        <div class="text-center mt-3">
+            <label for="cena">Strošek števca:</label>
+            <input class="form-control" id="cena" name="cena" value="{{cena}}" type="number"/>
+        </div>
+
+            <div class="text-center mt-3">
+                <label for="velikost">Velikost stanovanja (m^2):</label>
+                <input class="form-control" id="velikost" name="velikost" value="{{velikost}}" type="number"/>
+            </div>
+
+            <div class="text-center mt-3">
+                <label for="st_oseb">Število oseb:</label>
+                <input class="form-control" id="st_oseb" name="st_oseb" value="{{st_oseb}}" type="number"/>
+            </div>
+            <input class="form-control mb-5 mt-3 btn btn-danger" value = "Prijava" type="submit" />
+        </form>
+
+    </div>

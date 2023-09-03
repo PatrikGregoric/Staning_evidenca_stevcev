@@ -1,0 +1,28 @@
+% setdefault("napaka","")
+%rebase("base.html",naslov="Pregled enot",napaka="")
+
+  <table class="table table-hover">
+      <thead class="thead-light">
+        <tr>
+            <th><abbr title="Stavba">Stavba</abbr></th>
+            <th><abbr title="Velikost stanovanja">Velikost stanovanja</abbr></th>
+            <th><abbr title="Število oseb">Število oseb</abbr></th>
+            <th><abbr title="Števec">Števec</abbr></th>
+            <th><abbr title="Obračun">Obračun</abbr></th>
+            <th><abbr title="Lastnik">Lastnik</abbr></th>
+        </tr>
+      </thead>
+      % for (velikost,st_oseb,id_stevca,id_stavbe,vrednost,id_osebe) in enota:
+      % vrsta = stevci[id_stevca]
+      % ime_stavbe = stavbe[id_stavbe]
+      % lastnik = d[id_osebe]
+      <tr>
+            <td>{{ime_stavbe}}</td>
+            <td>{{velikost}}</td>
+            <td>{{st_oseb}}</td>
+            <td>{{vrsta}}</td>
+            <td>{{vrednost}}</td>
+            <td>{{lastnik}}</td>
+        </tr>    
+    % end
+  </table>

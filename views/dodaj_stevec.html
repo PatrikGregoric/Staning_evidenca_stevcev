@@ -1,0 +1,12 @@
+% setdefault("napaka","")
+%rebase("base.html",naslov="Dodaj nov števec",uporabnik=1,napaka=napaka)
+
+<div class="container w-50">   
+<form action="{{url('dodaj_stevec')}}" method="post">
+    <div class="text-center mt-3">
+        <label for="dodan_stevec">Števec:</label>
+        <input class="form-control" id="dodan_stevec" name="dodan_stevec" value="{{dodan_stevec}}" type="text"/>
+    </div>
+    <input class="form-control mb-5 mt-3 btn btn-danger" value = "Dodaj števec" type="submit" />
+</form>
+</div>

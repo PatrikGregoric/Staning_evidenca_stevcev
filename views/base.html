@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+  <body>
+    <div class="container bg-dark text-white rounded">
+        
+    %if int(uporabnik)==1:
+    <div class="container">
+        <div class="row justify-content-around">
+          <div class="col-3 mt-5">
+            
+                <form action="{{url('izbira_administrator')}}" method="get">
+                    <input class="form-control" value = "Domov" type="submit" />
+                </form>
+            
+          </div>
+          <div class="col-3 mt-5">
+            <form action="{{url('odjava')}}"  method="get">
+                <input class="form-control" value = "Odjava" type="submit" />
+            </form>
+            </div>
+        </div>
+    </div>
+    %end
+
+    %if int(uporabnik)==0:
+    <div class="container">
+        <div class="row justify-content-around">
+          <div class="col-3 mt-5">
+            
+                <form action="{{url('izbira')}}" method="get">
+                    <input class="form-control" value = "Domov" type="submit" />
+                </form>
+            
+          </div>
+          <div class="col-3 mt-5">
+            <form action="{{url('odjava')}}" method="get">
+                <input class="form-control" value = "Odjava" type="submit" />
+            </form>
+            </div>
+        </div>
+    </div>
+    %end
+
+    <div class="jumbotron text-center">
+        <h1 class="pt-5">Staning</h1>
+        <p class="pb-5">Najboljša evidenca števcov</p> 
+    </div>
+
+    </div>
+
+    
+    <div class="container border border-dark rounded border-2 mb-5">
+        <h2 class="text-center mt-5">{{naslov}}</h2>
+        %if napaka !="":
+            <p class="m-3 text-center text-danger">{{napaka}}</p>
+        %end
+    {{!base}}
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  </body>
+</html>
