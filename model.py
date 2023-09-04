@@ -13,6 +13,10 @@ from auth_public import *
 baza = psycopg2.connect(database=db, host=host, user=user, password=password, port=DB_PORT)
 cur=baza.cursor()
 
+@route(/OPB/projektna_naloga/<filename>)
+def banana(filename):
+    return static_file(filename, root='./views')
+
 def hashGesla(s):
     m = hashlib.sha256()
     m.update(s.encode("utf-8"))
